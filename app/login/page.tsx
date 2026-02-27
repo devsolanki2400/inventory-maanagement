@@ -50,37 +50,66 @@ export default function Login() {
     }
   };
 
+ return (
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center px-4"
+      style={{
+        backgroundImage: "url('/login-bg.avif')",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
 
-
-  return (
-    <div className="flex justify-center items-center h-screen">
-      <form onSubmit={handleSubmit} className="w-full max-w-md p-8 space-y-4">
-        <h2 className="text-2xl font-bold">Login</h2>
-        <Input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
-        <Input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-        />
-        <Button type="submit" className="w-full" disabled={isLoading}>
-          {isLoading ? "Logging In..." : "Login"}
-        </Button>
-        <div className="text-center">
-          <p>
-            Don&apos;t have an account?{" "}
-            <Link href="/register" className="text-blue-500">
-              Register
-            </Link>
+      {/* Login Card */}
+      <form
+        onSubmit={handleSubmit}
+        className="relative z-10 w-full max-w-md bg-background border rounded-xl shadow-lg p-6"
+      >
+        {/* Header */}
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold tracking-tight">
+            Welcome back
+          </h1>
+          <p className="text-sm text-muted-foreground mt-1">
+            Sign in to your inventory dashboard
           </p>
         </div>
+
+        {/* Inputs */}
+        <div className="space-y-4">
+          <Input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@example.com"
+            required
+          />
+
+          <Input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="••••••••"
+            required
+          />
+        </div>
+
+        {/* Button */}
+        <Button
+          type="submit"
+          className="w-full mt-6 text-base"
+          disabled={isLoading}
+        >
+          {isLoading ? "Signing in..." : "Sign in"}
+        </Button>
+
+        {/* Footer */}
+        <p className="text-sm text-center text-muted-foreground mt-6">
+          Don&apos;t have an account?{" "}
+          <Link href="/register" className="text-primary hover:underline">
+            Sign up
+          </Link>
+        </p>
       </form>
     </div>
   );

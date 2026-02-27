@@ -11,7 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import Papa from 'papaparse';
 import { FiFileText, FiGrid } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
-import * as XLSX from 'xlsx';
+//import * as XLSX from 'xlsx';
 import { CategoryDropDown } from "./AppTable/dropdowns/CategoryDropDown";
 import { StatusDropDown } from "./AppTable/dropdowns/StatusDropDown";
 import { SuppliersDropDown } from "./AppTable/dropdowns/SupplierDropDown";
@@ -146,9 +146,9 @@ export default function FiltersAndActions({
         'Created Date': new Date(product.createdAt).toLocaleDateString(),
       }));
 
-      const ws = XLSX.utils.json_to_sheet(excelData);
-      const wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, 'Products');
+      // const ws = XLSX.utils.json_to_sheet(excelData);
+      // const wb = XLSX.utils.book_new();
+      // XLSX.utils.book_append_sheet(wb, ws, 'Products');
 
       // Auto-size columns
       const colWidths = [
@@ -161,9 +161,9 @@ export default function FiltersAndActions({
         { wch: 15 }, // Supplier
         { wch: 12 }, // Created Date
       ];
-      ws['!cols'] = colWidths;
+      // ws['!cols'] = colWidths;
 
-      XLSX.writeFile(wb, `stockly-products-${new Date().toISOString().split('T')[0]}.xlsx`);
+      // XLSX.writeFile(wb, `stockly-products-${new Date().toISOString().split('T')[0]}.xlsx`);
 
       toast({
         title: "Excel Export Successful!",

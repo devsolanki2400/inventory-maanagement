@@ -60,44 +60,76 @@ export default function Register() {
   };
 
 
+return (
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center px-4"
+      style={{
+        backgroundImage: "url('/login-bg.avif')",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
 
-  return (
-    <div className="flex justify-center items-center h-screen">
-      <form onSubmit={handleSubmit} className="w-full max-w-md p-8 space-y-4">
-        <h2 className="text-2xl font-bold">Register</h2>
-        <Input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Name"
-          required
-        />
-        <Input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
-        <Input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-        />
-        <Button type="submit" className="w-full" disabled={isLoading}>
-          {isLoading ? "Creating Account..." : "Register"}
-        </Button>
-        <div className="text-center">
-          <p>
-            Already have an account?{" "}
-            <Link href="/login" className="text-blue-500">
-              Login
-            </Link>
+      {/* Register Card */}
+      <form
+        onSubmit={handleSubmit}
+        className="relative z-10 w-full max-w-md bg-background border rounded-xl shadow-lg p-6"
+      >
+        {/* Header */}
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold tracking-tight">
+            Create an account
+          </h1>
+          <p className="text-sm text-muted-foreground mt-1">
+            Start managing your inventory today
           </p>
         </div>
+
+        {/* Inputs */}
+        <div className="space-y-4">
+          <Input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Full name"
+            required
+          />
+
+          <Input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@example.com"
+            required
+          />
+
+          <Input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="••••••••"
+            required
+          />
+        </div>
+
+        {/* Submit button */}
+        <Button
+          type="submit"
+          className="w-full mt-6 text-base"
+          disabled={isLoading}
+        >
+          {isLoading ? "Creating account..." : "Create account"}
+        </Button>
+
+        {/* Footer */}
+        <p className="text-sm text-center text-muted-foreground mt-6">
+          Already have an account?{" "}
+          <Link href="/login" className="text-primary hover:underline">
+            Sign in
+          </Link>
+        </p>
       </form>
     </div>
   );
 }
+
