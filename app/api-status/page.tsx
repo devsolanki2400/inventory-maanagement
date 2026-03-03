@@ -112,7 +112,7 @@ export default function ApiStatusPage() {
       const overallHealth = getOverallHealth(endpointStatuses);
 
       const status: SystemStatus = {
-        project: "Stockly Inventory Management",
+        project: "Inventory Management",
         environment: process.env.NODE_ENV === 'production' ? 'production' : 'development',
         currentTime: new Date().toLocaleString(),
         uptime: calculateUptime(),

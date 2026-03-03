@@ -28,18 +28,17 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Stockly - Inventory Management System",
+  title: "Inventory Management System",
   description:
-    "Stockly is a modern Next.js web application for efficient product inventory management. Features include product listing, filtering, sorting, secure authentication, and responsive design.",
+    "A modern Next.js web application for efficient product inventory management. Features include product listing, filtering, sorting, secure authentication, and responsive design.",
   authors: [
     {
-      name: "Arnob Mahmud",
-      url: "https://arnob-mahmud.vercel.app/",
-      email: "arnob_t78@yahoo.com",
+      name: "Dev Solanki",
+      url: "",
+      email: "devsolanki.personal@gmail.com",
     },
   ],
   keywords: [
-    "Stockly",
     "Inventory Management",
     "Next.js",
     "React",
@@ -50,7 +49,7 @@ export const metadata = {
     "JWT",
     "CRUD",
     "Responsive Web App",
-    "Arnob Mahmud",
+    
   ],
   icons: {
     icon: "/favicon.ico",
@@ -59,29 +58,7 @@ export const metadata = {
       { rel: "icon", url: "/favicon.ico" },
     ],
   },
-  openGraph: {
-    title: "Stockly - Inventory Management System",
-    description:
-      "Efficiently manage your product inventory with Stockly, a secure and responsive Next.js web application.",
-    url: "https://stockly-inventory.vercel.app/",
-    images: [
-      {
-        url: "https://github.com/user-attachments/assets/7495dcfb-c7cb-44e6-a1ef-d82930a8ada7",
-        width: 1200,
-        height: 630,
-        alt: "Stockly Screenshot",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Stockly - Inventory Management System",
-    description:
-      "Efficiently manage your product inventory with Stockly, a secure and responsive Next.js web application.",
-    images: [
-      "https://github.com/user-attachments/assets/7495dcfb-c7cb-44e6-a1ef-d82930a8ada7",
-    ],
-  },
+  
 };
 
 export default function RootLayout({
